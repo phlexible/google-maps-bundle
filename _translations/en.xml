@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<translations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:noNamespaceSchemaLocation="http://www.phlexible.net/schemas/1.0/t9n.xsd">
+  <page id="googlemaps" lang="en" section="backend" namespace="makeweb">
+    <item key="component_description">Component to provide a Google Maps API-Key and static Google Maps-Images.</item>
+    <item key="component_name">Googlemaps</item>
+
+    <item key="address">Address</item>
+    <item key="coordinates">Coordinates</item>
+
+    <item key="street">Street</item>
+    <item key="number">Number</item>
+    <item key="district">District</item>
+    <item key="postal">Postal</item>
+    <item key="city">City</item>
+    <item key="region">Region</item>
+    <item key="state">State</item>
+    <item key="country">Country</item>
+
+    <item key="latitude">Latitude</item>
+    <item key="longitude">Longitude</item>
+
+    <item key="query">Query</item>
+    <item key="query_by_address">Query by address</item>
+    <item key="query_by_coordinates">Query by coordinates</item>
+
+    <item key="update">Update</item>
+    <item key="cancel">Cancel</item>
+  </page>
+</translations>
