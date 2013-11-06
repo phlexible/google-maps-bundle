@@ -26,11 +26,11 @@ class Makeweb_Googlemaps_Component extends MWF_Component_Abstract
      */
     public function __construct()
     {
-        $this->setVersion('0.6.0');
-        $this->setId('googlemaps');
-        $this->setFile(__FILE__);
-        $this->setPackage('makeweb');
-        $this->setOrder('after fields');
+        $this
+            ->setVersion('0.6.0')
+            ->setId('googlemaps')
+            ->setFile(__FILE__)
+            ->setPackage('makeweb');
     }
 
     public function initContainer(MWF_Container_ContainerBuilder $container)
