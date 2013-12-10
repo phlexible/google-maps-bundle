@@ -45,12 +45,12 @@ class Listeners
      * @param Makeweb_Renderers_Event_Assign $event
      * @param array                          $params
      */
-    public static function onAssign(Makeweb_Renderers_Event_Assign $event, array $params = array())
+    public static function onAssign(\Makeweb_Renderers_Event_Assign $event, array $params = array())
     {
         $view = $event->getRenderer()->getView();
 
         $container = $params['container'];
-        $mapsApiKey = $container->getParam(':googlemaps.key');
+        $mapsApiKey = $container->getParameter(':googlemaps.key');
 
         if ($mapsApiKey)
         {
@@ -63,12 +63,12 @@ class Listeners
      *
      * @param MWF_Core_Frame_Event_ViewFrame $event
      */
-    public static function onViewFrame(MWF_Core_Frame_Event_ViewFrame $event)
+    public static function onViewFrame(\MWF_Core_Frame_Event_ViewFrame $event)
     {
         $request = $event->getRequest();
 
         $protocol = 'http://';
-        if ($request instanceof Zend_Controller_Request_Http && $request->isSecure())
+        if ($request instanceof \Zend_Controller_Request_Http && $request->isSecure())
         {
             $protocol = 'https://';
         }
