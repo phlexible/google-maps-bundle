@@ -1,4 +1,7 @@
 <?php
+
+namespace Phlexible\GoogleMapsComponent\Plugin;
+
 /**
  * Customized Dwoo plugin for generation of static Google Maps Image
  * including fallback when defaultImage is provided
@@ -12,11 +15,11 @@
  * @param   array   $rest[optional] Array of not explicit named parameters
  * @return  string  $result         Static Google Maps image
  */
-function Dwoo_Plugin_mwStaticGoogleMaps(Dwoo $dwoo, $latitude = '', $longitude = '', $width = '', $height = '',  $zoom = 10, array $rest = array())
+function StaticGoogleMap(Dwoo $dwoo, $latitude = '', $longitude = '', $width = '', $height = '',  $zoom = 10, array $rest = array())
 {
     if (empty($width) || empty($height))
     {
-        throw new RuntimeException('Cannot proceed: width and height are empty!');
+        throw new \RuntimeException('Cannot proceed: width and height are empty!');
     }
 
     // named parameters for the <img />-tag
@@ -29,7 +32,7 @@ function Dwoo_Plugin_mwStaticGoogleMaps(Dwoo $dwoo, $latitude = '', $longitude =
     {
         try
         {
-            $googlemapsStatic = MWF_Registry::get('container')->googlemapsStatic;
+            $googlemapsStatic = \MWF_Registry::get('container')->googlemapsStatic;
             $data = $dwoo->getData();
             $useHttps = !empty($data['ssl']);
             $source = $googlemapsStatic->getUri($latitude, $longitude, $width, $height, $zoom, $useHttps);
@@ -39,7 +42,7 @@ function Dwoo_Plugin_mwStaticGoogleMaps(Dwoo $dwoo, $latitude = '', $longitude =
                 $params['src'] = $source;
             }
         }
-        catch (MWF_Core_Registry_Exception $e)
+        catch (\Exception $e)
         {
             $e->printStackTrace();
         }

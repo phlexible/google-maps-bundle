@@ -9,7 +9,7 @@
 namespace Phlexible\GoogleMapsComponent;
 
 use MWF_Component_Abstract as AbstractComponent;
-use MWF_Container_ContainerBuilder as ContainerBuilder;
+use Phlexible\Container\ContainerBuilder;
 
 /**
  * Google Maps component
@@ -29,14 +29,24 @@ class GoogleMapsComponent extends AbstractComponent
 
     public function initContainer(ContainerBuilder $container)
     {
-        $container->setParams(array(
-            ':googlemaps.key' => '',
-        ));
+        $container->setParameters(
+            array(
+                ':googlemaps.key' => '',
+            )
+        );
 
         $container->addComponents(
             array(
                 'googlemapsStatic' => array(
                     'class' => 'Phlexible\GoogleMapsComponent\StaticMap',
+                ),
+                // dwoo plugins
+                'googlemapsPluginStatisGoogleMap' => array(
+                    'tag'   => array(
+                        'name'  => 'dwoo.plugin',
+                        'class' => 'Phlexible\DwooRenderer\Plugin\StaticGoogleMap',
+                        'alias' => 'mwStaticGoogleMaps'
+                    ),
                 ),
                 // listener
                 'googlemapsListenerAssign' => array(
