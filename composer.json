@@ -4,10 +4,9 @@
     "license": "proprietary",
     "autoload": {
         "psr-0": { 
-            "Makeweb_Googlemaps_": ""
+            "Phlexible\\GoogleMapsComponent\\": ""
         }
     },
-    "target-dir": "Makeweb/Googlemaps",
     "require": {
         "php": ">=5.3.0"
     },

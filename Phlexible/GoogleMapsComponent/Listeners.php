@@ -1,32 +1,27 @@
 <?php
 /**
- * MAKEweb
+ * phlexible
  *
- * PHP Version 5
- *
- * @category    Makeweb
- * @package     Makeweb_Googlemaps
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
- * @version     SVN: $Id:$
+ * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
+ * @license   proprietary
  */
 
+namespace Phlexible\GoogleMapsComponent;
+
 /**
- * Add Google Maps Key to the View
+ * Google Maps listeners
  *
- * @category    Makeweb
- * @package     Makeweb_Googlemaps
- * @author      Marcus Stöhr <mstoehr@brainbits.net>
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
+ * @author Marcus Stöhr <mstoehr@brainbits.net>
  */
-class Makeweb_Googlemaps_Callback
+class Listeners
 {
     /**
      * Add dwoo plugins
      *
-     * @param MWF_Core_Templating_Event_CreateView $event
+     * @param \MWF_Core_Templating_Event_CreateView $event
      * @param array                                $params
      */
-    public static function callAddPlugins(MWF_Core_Templating_Event_CreateView $event, array $params)
+    public static function onCreateView(\MWF_Core_Templating_Event_CreateView $event, array $params)
     {
         // get view
         $view = $event->getView();
@@ -50,7 +45,7 @@ class Makeweb_Googlemaps_Callback
      * @param Makeweb_Renderers_Event_Assign $event
      * @param array                          $params
      */
-    public static function addGoogleMapsKey(Makeweb_Renderers_Event_Assign $event, array $params = array())
+    public static function onAssign(Makeweb_Renderers_Event_Assign $event, array $params = array())
     {
         $view = $event->getRenderer()->getView();
 
@@ -68,7 +63,7 @@ class Makeweb_Googlemaps_Callback
      *
      * @param MWF_Core_Frame_Event_ViewFrame $event
      */
-    public static function callViewDefault(MWF_Core_Frame_Event_ViewFrame $event)
+    public static function onViewFrame(MWF_Core_Frame_Event_ViewFrame $event)
     {
         $request = $event->getRequest();
 

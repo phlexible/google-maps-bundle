@@ -1,39 +1,33 @@
 <?php
 /**
- * MAKEweb
+ * phlexible
  *
- * PHP Version 5
- *
- * @category    Makeweb
- * @package     Makeweb_Googlemaps
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
- * @version     SVN: $Id:$
+ * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
+ * @license   proprietary
  */
 
+namespace Phlexible\GoogleMapsComponent;
+
+use MWF_Component_Abstract as AbstractComponent;
+use MWF_Container_ContainerBuilder as ContainerBuilder;
+
 /**
- * Makeweb Google Maps Plugin für Geotag Component
+ * Google Maps component
  *
- * @category    Makeweb
- * @package     Makeweb_Googlemaps
- * @author      Marcus Stöhr <mstoehr@brainbits.net>
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
+ * @author Marcus Stöhr <mstoehr@brainbits.net>
  */
-class Makeweb_Googlemaps_Component extends MWF_Component_Abstract
+class GoogleMapsComponent extends AbstractComponent
 {
-    /**
-     * Constructor
-     * Initialses the Component values
-     */
     public function __construct()
     {
         $this
             ->setVersion('0.6.0')
             ->setId('googlemaps')
             ->setFile(__FILE__)
-            ->setPackage('makeweb');
+            ->setPackage('phlexible');
     }
 
-    public function initContainer(MWF_Container_ContainerBuilder $container)
+    public function initContainer(ContainerBuilder $container)
     {
         $container->setParams(array(
             ':googlemaps.key' => '',
@@ -42,28 +36,28 @@ class Makeweb_Googlemaps_Component extends MWF_Component_Abstract
         $container->addComponents(
             array(
                 'googlemapsStatic' => array(
-                    'class' => 'Makeweb_Googlemaps_StaticMap',
+                    'class' => 'Phlexible\GoogleMapsComponent\StaticMap',
                 ),
                 // listener
                 'googlemapsListenerAssign' => array(
                     'tag' => array(
                         'name' => 'event.listener',
-                        'event' => Makeweb_Renderers_Event::ASSIGN,
-                        'callback' => array('Makeweb_Googlemaps_Callback', 'addGoogleMapsKey'),
+                        'event' => \Makeweb_Renderers_Event::ASSIGN,
+                        'callback' => array('Phlexible\GoogleMapsComponent\Listeners', 'onAssign'),
                     ),
                 ),
                 'googlemapsListenerViewDefault' => array(
                     'tag' => array(
                         'name' => 'event.listener',
-                        'event' => MWF_Core_Frame_Event::VIEW_FRAME,
-                        'callback' => array('Makeweb_Googlemaps_Callback', 'callViewDefault'),
+                        'event' => \MWF_Core_Frame_Event::VIEW_FRAME,
+                        'callback' => array('Phlexible\GoogleMapsComponent\Listeners', 'onViewFrame'),
                     ),
                 ),
                 'googlemapsListenerAddPlugins' => array(
                     'tag' => array(
                         'name' => 'event.listener',
-                        'event' => MWF_Core_Templating_Event::CREATE_VIEW,
-                        'callback' => array('Makeweb_Googlemaps_Callback', 'callAddPlugins'),
+                        'event' => \MWF_Core_Templating_Event::CREATE_VIEW,
+                        'callback' => array('Phlexible\GoogleMapsComponent\Listeners', 'onCreateView'),
                     ),
                 ),
             )
@@ -78,7 +72,7 @@ class Makeweb_Googlemaps_Component extends MWF_Component_Abstract
     public function getFields()
     {
         $fields = array(
-            'address' => 'Makeweb_Googlemaps_Field_Address'
+            'address' => 'Phlexible\GoogleMapsComponent\Field\AddressField',
         );
 
         return $fields;

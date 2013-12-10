@@ -1,24 +1,17 @@
 <?php
 /**
- * MAKEweb
+ * phlexible
  *
- * PHP Version 5
- *
- * @category    Makeweb
- * @package     Makeweb_Googlemaps
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
- * @version     SVN: $Id:$
+ * @copyright 2007-2013 brainbits GmbH (http://www.brainbits.net)
+ * @license   proprietery
  */
 
 /**
  * Class for fetching the static google maps uri
  *
- * @category    Makeweb
- * @package     Makeweb_Googlemaps
- * @author      Marcus Stöhr <ms@brainbits.net>
- * @copyright   2010 brainbits GmbH (http://www.brainbits.net)
+ * @author Marcus Stöhr <ms@brainbits.net>
  */
-class Makeweb_Googlemaps_StaticMap
+class StaticMap
 {
     /**
      * Returns the uri for the static map.
