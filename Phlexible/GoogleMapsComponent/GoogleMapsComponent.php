@@ -8,7 +8,7 @@
 
 namespace Phlexible\GoogleMapsComponent;
 
-use MWF_Component_Abstract as AbstractComponent;
+use Phlexible\Component\AbstractComponent;
 use Phlexible\Container\ContainerBuilder;
 
 /**
