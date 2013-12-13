@@ -7,6 +7,7 @@
  */
 
 namespace Phlexible\GoogleMapsComponent;
+use Phlexible\FrameComponent\Event\ViewFrameEvent;
 
 /**
  * Google Maps listeners
@@ -61,9 +62,9 @@ class Listeners
     /**
      * Add Google Maps-script to the view
      *
-     * @param MWF_Core_Frame_Event_ViewFrame $event
+     * @param ViewFrameEvent $event
      */
-    public static function onViewFrame(\MWF_Core_Frame_Event_ViewFrame $event)
+    public static function onViewFrame(ViewFrameEvent $event)
     {
         $request = $event->getRequest();
 

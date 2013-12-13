@@ -10,6 +10,7 @@ namespace Phlexible\GoogleMapsComponent;
 
 use Phlexible\Component\AbstractComponent;
 use Phlexible\Container\ContainerBuilder;
+use Phlexible\FrameComponent\Events as FrameEvents;
 
 /**
  * Google Maps component
@@ -59,7 +60,7 @@ class GoogleMapsComponent extends AbstractComponent
                 'googlemapsListenerViewDefault' => array(
                     'tag' => array(
                         'name' => 'event.listener',
-                        'event' => \MWF_Core_Frame_Event::VIEW_FRAME,
+                        'event' => FrameEvents::VIEW_FRAME,
                         'callback' => array('Phlexible\GoogleMapsComponent\Listeners', 'onViewFrame'),
                     ),
                 ),
