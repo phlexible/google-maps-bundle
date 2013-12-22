@@ -9,8 +9,6 @@
 namespace Phlexible\GoogleMapsComponent;
 
 use Phlexible\Component\AbstractComponent;
-use Phlexible\Container\ContainerBuilder;
-use Phlexible\FrameComponent\Events as FrameEvents;
 
 /**
  * Google Maps component
@@ -28,53 +26,6 @@ class GoogleMapsComponent extends AbstractComponent
             ->setPackage('phlexible');
     }
 
-    public function initContainer(ContainerBuilder $container)
-    {
-        $container->setParameters(
-            array(
-                ':googlemaps.key' => '',
-            )
-        );
-
-        $container->addComponents(
-            array(
-                'googlemapsStatic' => array(
-                    'class' => 'Phlexible\GoogleMapsComponent\StaticMap',
-                ),
-                // dwoo plugins
-                'googlemapsPluginStatisGoogleMap' => array(
-                    'tag'   => array(
-                        'name'  => 'dwoo.plugin',
-                        'class' => 'Phlexible\DwooRenderer\Plugin\StaticGoogleMap',
-                        'alias' => 'mwStaticGoogleMaps'
-                    ),
-                ),
-                // listener
-                'googlemapsListenerAssign' => array(
-                    'tag' => array(
-                        'name' => 'event.listener',
-                        'event' => \Makeweb_Renderers_Event::ASSIGN,
-                        'callback' => array('Phlexible\GoogleMapsComponent\Listeners', 'onAssign'),
-                    ),
-                ),
-                'googlemapsListenerViewDefault' => array(
-                    'tag' => array(
-                        'name' => 'event.listener',
-                        'event' => FrameEvents::VIEW_FRAME,
-                        'callback' => array('Phlexible\GoogleMapsComponent\Listeners', 'onViewFrame'),
-                    ),
-                ),
-                'googlemapsListenerAddPlugins' => array(
-                    'tag' => array(
-                        'name' => 'event.listener',
-                        'event' => \MWF_Core_Templating_Event::CREATE_VIEW,
-                        'callback' => array('Phlexible\GoogleMapsComponent\Listeners', 'onCreateView'),
-                    ),
-                ),
-            )
-        );
-    }
-
     /**
      * Return fields
      *
@@ -87,37 +38,5 @@ class GoogleMapsComponent extends AbstractComponent
         );
 
         return $fields;
-    }
-
-    /**
-     * Return scripts
-     *
-     * @return array
-     */
-    public function getScripts()
-    {
-        $path = $this->getPath().'/_scripts/';
-
-        return array(
-            $path . 'Definitions.js',
-            $path . 'MapWindow.js',
-            $path . 'AddressSearch.js',
-            $path . 'fields/AddressField.js',
-        );
-    }
-
-    /**
-     * Return translations
-     *
-     * @return array
-     */
-    public function getTranslations()
-    {
-        $t9n  = $this->getContainer()->t9n;
-        $page = $t9n->googlemaps->toArray();
-
-        return array(
-            'Makeweb.strings.Googlemaps' => $page
-        );
     }
 }
