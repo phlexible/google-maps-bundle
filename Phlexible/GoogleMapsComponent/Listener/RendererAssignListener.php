@@ -6,10 +6,10 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsComponent\Event;
+namespace Phlexible\GoogleMapsComponent\Listener;
 
 /**
- * Google Maps listeners
+ * Renderer assign listener
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */

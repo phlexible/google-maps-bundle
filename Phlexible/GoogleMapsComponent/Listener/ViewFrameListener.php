@@ -6,12 +6,12 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsComponent\Event;
+namespace Phlexible\GoogleMapsComponent\Listener;
 
 use Phlexible\FrameComponent\Event\ViewFrameEvent;
 
 /**
- * Google Maps listeners
+ * View frame listener
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */

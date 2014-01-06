@@ -27,4 +27,4 @@ services:
         class: Phlexible\GoogleMapsComponent\Asset\ScriptCollection
         arguments: ["%googlemaps.asset.script_path%"]
         tags:
-            - ["asset.script"]
+            - ["asset.script", {priority: -500}]
