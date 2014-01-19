@@ -22,7 +22,6 @@ class GoogleMapsComponent extends AbstractComponent
         $this
             ->setVersion('0.6.0')
             ->setId('googlemaps')
-            ->setFile(__FILE__)
             ->setPackage('phlexible');
     }
 
