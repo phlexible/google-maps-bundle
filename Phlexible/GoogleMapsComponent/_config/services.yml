@@ -6,10 +6,10 @@ services:
         class: Phlexible\GoogleMapsComponent\StaticMap
 
     # dwoo plugins
-    googlemapsPluginStatisGoogleMap:
-        class: Phlexible\GoogleMapsComponent\Plugin\StaticGoogleMap
-        tags:
-            - ["dwoo.plugin", {alias: mwStaticGoogleMaps}]
+    #googlemapsPluginStatisGoogleMap:
+    #    class: Phlexible\GoogleMapsComponent\Plugin\StaticGoogleMap
+    #    tags:
+    #        - ["dwoo.plugin", {alias: mwStaticGoogleMaps}]
 
     # listeners
     googlemapsListenerRendererAssign:
@@ -17,6 +17,7 @@ services:
         arguments: ["%googlemaps.api_key%"]
         tags:
             - ["event.listener", {event: renderers.assign, method: onRendererAssign}]
+
     googlemapsListenerViewFrame:
         class: Phlexible\GoogleMapsComponent\Listener\ViewFrameListener
         tags:

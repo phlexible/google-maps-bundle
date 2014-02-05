@@ -1,0 +1,28 @@
+Phlexible:
+    strings:
+        googlemaps:
+            component:
+                name: Google Maps
+                description: Google Maps
+        
+            address: Address
+            coordinates: Coordinates
+        
+            street: Street
+            number: Number
+            district: District
+            postal: Postal
+            city: City
+            region: Region
+            state: State
+            country: Country
+        
+            latitude: Latitude
+            longitude: Longitude
+        
+            query: Query
+            query_by_address: Query by address
+            query_by_coordinates: Query by coordinates
+        
+            update: Update
+            cancel: Cancel
