@@ -3,7 +3,7 @@
     "description": "phlexible.cms google maps component",
     "license": "proprietary",
     "autoload": {
-        "psr-0": { 
+        "psr-4": { 
             "Phlexible\\GoogleMapsComponent\\": ""
         }
     },
