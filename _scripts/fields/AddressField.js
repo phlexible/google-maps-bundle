@@ -1,4 +1,4 @@
-Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
+Phlexible.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
     trigger1Class: 'x-form-clear-trigger',
     trigger2Class: 'm-form-link-trigger',
     enableKeyEvents: true,
@@ -18,7 +18,7 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
 
         this.task = new Ext.util.DelayedTask(this.searchAddress, this);
 
-        this.addressSearch = new Makeweb.googlemaps.AddressSearch({
+        this.addressSearch = new Phlexible.googlemaps.AddressSearch({
             resultData: this.resultData,
             listeners: {
                 results: {
@@ -58,11 +58,11 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
             }
         });
 
-        if (!Makeweb.googlemaps.mapwin) {
-            Makeweb.googlemaps.mapwin = new Makeweb.googlemaps.MapWindow();
+        if (!Phlexible.googlemaps.mapwin) {
+            Phlexible.googlemaps.mapwin = new Phlexible.googlemaps.MapWindow();
         }
 
-        Makeweb.googlemaps.AddressField.superclass.initComponent.call(this);
+        Phlexible.googlemaps.AddressField.superclass.initComponent.call(this);
     },
 
     initTrigger: function() {
@@ -192,7 +192,7 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
             return false;
         }
 
-        return Makeweb.googlemaps.AddressField.superclass.validateValue.call(this, value);
+        return Phlexible.googlemaps.AddressField.superclass.validateValue.call(this, value);
     },
 
     onTrigger1Click: function(){
@@ -206,7 +206,7 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
     },
 
     showMap: function(resultData) {
-        Makeweb.googlemaps.mapwin.show(resultData);
+        Phlexible.googlemaps.mapwin.show(resultData);
     },
 
     syncValue: function() {
@@ -220,7 +220,7 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
 
     // private
     onRender : function(ct, position){
-        Makeweb.googlemaps.AddressField.superclass.onRender.call(this, ct, position);
+        Phlexible.googlemaps.AddressField.superclass.onRender.call(this, ct, position);
 
         this.resultEl = this.el.parent().createChild({
             tag: "div",
@@ -246,13 +246,13 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
             value: ''
         });
 
-        Makeweb.fields.FieldHelper.prefix.call(this);
-        Makeweb.fields.FieldHelper.suffix.call(this);
-        Makeweb.fields.FieldHelper.diff.call(this);
-        Makeweb.fields.FieldHelper.inlineDiff.call(this);
-        Makeweb.fields.FieldHelper.variant.call(this);
-        Makeweb.fields.FieldHelper['synchronized'].call(this, false, this.trigger);
-        Makeweb.fields.FieldHelper.repeatable.call(this);
+        Phlexible.fields.FieldHelper.prefix.call(this);
+        Phlexible.fields.FieldHelper.suffix.call(this);
+        Phlexible.fields.FieldHelper.diff.call(this);
+        Phlexible.fields.FieldHelper.inlineDiff.call(this);
+        Phlexible.fields.FieldHelper.variant.call(this);
+        Phlexible.fields.FieldHelper['synchronized'].call(this, false, this.trigger);
+        Phlexible.fields.FieldHelper.repeatable.call(this);
     },
 
     addField: function(formItem, item, pos, element, repeatable_postfix, forceAdd) {
@@ -262,7 +262,7 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
 
         element.prototypes.incCount(item.ds_id);
 
-        var config = Makeweb.fields.FieldHelper.defaults(formItem, item, element, repeatable_postfix, forceAdd);
+        var config = Phlexible.fields.FieldHelper.defaults(formItem, item, element, repeatable_postfix, forceAdd);
 
         Ext.apply(config, {
             hiddenName: config.name,
@@ -285,7 +285,7 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
 
         delete config.name;
 
-        var newItem = new Makeweb.googlemaps.AddressField(config);
+        var newItem = new Phlexible.googlemaps.AddressField(config);
 
         if(pos !== undefined && pos !== null && pos !== false) {
             formItem.insert(pos, newItem);
@@ -296,9 +296,9 @@ Makeweb.googlemaps.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
 
 });
 
-Makeweb.fields.Registry.addFactory('address', Makeweb.googlemaps.AddressField.prototype.addField);
+Phlexible.fields.Registry.addFactory('address', Phlexible.googlemaps.AddressField.prototype.addField);
 
-Makeweb.fields.FieldTypes.addField('address', {
+Phlexible.fields.FieldTypes.addField('address', {
     titles: {
         de: 'Adresse',
         en: 'Address'

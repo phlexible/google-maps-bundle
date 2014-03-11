@@ -1,4 +1,4 @@
-Makeweb.googlemaps.AddressSearch = function(config) {
+Phlexible.googlemaps.AddressSearch = function(config) {
     config = config || {};
 
     /**
@@ -18,7 +18,7 @@ Makeweb.googlemaps.AddressSearch = function(config) {
         /**
          * @event results
          * Fires after a valid search result has been received.
-         * @param {Makeweb.googlemaps.Search} this
+         * @param {Phlexible.googlemaps.Search} this
          * @param {Object} results
          * @param {String} status
          */
@@ -26,7 +26,7 @@ Makeweb.googlemaps.AddressSearch = function(config) {
         /**
          * @event error
          * Fires after a search produced an error.
-         * @param {Makeweb.googlemaps.Search} this
+         * @param {Phlexible.googlemaps.Search} this
          * @param {Object} results
          * @param {String} status
          */
@@ -34,20 +34,20 @@ Makeweb.googlemaps.AddressSearch = function(config) {
         /**
          * @event result
          * Fires after a search result has been selected.
-         * @param {Makeweb.googlemaps.Search} this
+         * @param {Phlexible.googlemaps.Search} this
          * @param {Object} result
          */
         'result',
         /**
          * @event reset
          * Fires after a pending search has been reset.
-         * @param {Makeweb.googlemaps.Search} this
+         * @param {Phlexible.googlemaps.Search} this
          */
         'reset',
         /**
          * @event clear
          * Fires after everything has been cleared.
-         * @param {Makeweb.googlemaps.Search} this
+         * @param {Phlexible.googlemaps.Search} this
          */
         'clear'
     );
@@ -62,7 +62,7 @@ Makeweb.googlemaps.AddressSearch = function(config) {
         delete this.listeners;
     }
 };
-Ext.extend(Makeweb.googlemaps.AddressSearch, Ext.util.Observable, {
+Ext.extend(Phlexible.googlemaps.AddressSearch, Ext.util.Observable, {
     pendingQuery: null,
     pendingResults: null,
     resultData: null,
@@ -148,44 +148,44 @@ Ext.extend(Makeweb.googlemaps.AddressSearch, Ext.util.Observable, {
 
     getFormatted: function(resultData) {
         var parts = [];
-        
+
         if (resultData.address.street) {
             var v = resultData.address.street;
-            
+
             if (resultData.address.number) {
                 v += ' ' + resultData.address.number;
             }
-            
+
             parts.push(v);
         }
-        
+
         if (resultData.address.postal || resultData.address.city) {
             var v = [];
-            
+
             if (resultData.address.postal) {
                 v.push(resultData.address.postal);
             }
             if (resultData.address.city) {
                 v.push(resultData.address.city);
             }
-            
+
             parts.push(v.join(' '));
         }
-        
+
         if (resultData.address.country) {
             parts.push(resultData.address.country);
         }
-        
+
         var formatted = parts.join(', ');
-        
+
         return formatted;
     },
-    
+
     setResultData: function(resultData) {
         this.reset();
 
         resultData.formatted = this.getFormatted(resultData);
-        
+
         this.resultData = resultData;
         this.fireEvent('select', this, this.resultData);
     },

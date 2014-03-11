@@ -1,28 +1,20 @@
-Phlexible:
-    strings:
-        googlemaps:
-            component:
-                name: Google Maps
-                description: Google Maps
-        
-            address: Adresse
-            coordinates: Koordinaten
-        
-            street: Strasse
-            number: Hausnr.
-            district: Stadtteil
-            postal: Postleitzahl
-            city: Stadt
-            region: Region
-            state: Bundesland
-            country: Land
-        
-            latitude: Breitengrad
-            longitude: Längengrad
-        
-            query: Anfrage
-            query_by_address: Adresse anfragen
-            query_by_coordinates: Koordinaten anfragen
-        
-            update: Benutzen
-            cancel: Abbrechen
+googlemaps:
+    component_description: 'Komponente zur Bereitsstellung eines Google Maps API-Keys und statischen Google Maps-Bildern.'
+    component_name: Googlemaps
+    address: Adresse
+    coordinates: Koordinaten
+    street: Strasse
+    number: Hausnr.
+    district: Stadtteil
+    postal: Postleitzahl
+    city: Stadt
+    region: Region
+    state: Bundesland
+    country: Land
+    latitude: Breitengrad
+    longitude: Längengrad
+    query: Anfrage
+    query_by_address: 'Adresse anfragen'
+    query_by_coordinates: 'Koordinaten anfragen'
+    update: Benutzen
+    cancel: Abbrechen

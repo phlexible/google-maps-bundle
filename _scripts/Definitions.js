@@ -1,1 +1,1 @@
-Ext.ns('Makeweb.googlemaps');
+Ext.ns('Phlexible.googlemaps');

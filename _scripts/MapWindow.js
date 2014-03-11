@@ -1,6 +1,6 @@
-Makeweb.googlemaps.MapWindow = Ext.extend(Ext.Window, {
-    title: Makeweb.strings.Googlemaps.address,
-    strings: Makeweb.strings.Googlemaps,
+Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
+    title: Phlexible.googlemaps.Strings.address,
+    strings: Phlexible.googlemaps.Strings,
     width: 800,
     minWidth: 800,
     height: 520,
@@ -123,7 +123,7 @@ Makeweb.googlemaps.MapWindow = Ext.extend(Ext.Window, {
                 text: this.strings.update,
                 handler: function() {
                     var resultData = this.addressSearch.getResultData();
-                    
+
                     var values = this.getComponent(1).getForm().getValues();
                     resultData.address.street = values.street;
                     resultData.address.number = values.number;
@@ -135,7 +135,7 @@ Makeweb.googlemaps.MapWindow = Ext.extend(Ext.Window, {
                     resultData.address.country = values.country;
                     resultData.geometry.lat = values.lat;
                     resultData.geometry.lng = values.lng;
-                    
+
                     this.callerAddressSearch.setResultData(resultData);
                     this.hide();
                 },
@@ -193,7 +193,7 @@ Makeweb.googlemaps.MapWindow = Ext.extend(Ext.Window, {
 
         }];
 
-        this.addressSearch = new Makeweb.googlemaps.AddressSearch({
+        this.addressSearch = new Phlexible.googlemaps.AddressSearch({
             listeners: {
                 results: {
                     fn: function(addressSearch, results, status) {
@@ -229,12 +229,12 @@ Makeweb.googlemaps.MapWindow = Ext.extend(Ext.Window, {
             }
         });
 
-        Makeweb.googlemaps.MapWindow.superclass.initComponent.call(this);
+        Phlexible.googlemaps.MapWindow.superclass.initComponent.call(this);
     },
 
     updateFromForm: function() {
         var values = this.getComponent(1).getForm().getValues();
-        
+
         this.addressSearch.resultData.address.street = values.street;
         this.addressSearch.resultData.address.number = values.number;
         this.addressSearch.resultData.address.district = values.district;
@@ -246,9 +246,9 @@ Makeweb.googlemaps.MapWindow = Ext.extend(Ext.Window, {
         this.addressSearch.resultData.geometry.lat = values.lat;
         this.addressSearch.resultData.geometry.lng = values.lng;
     },
-    
+
     xonRender: function(a,b) {
-        Makeweb.googlemaps.MapWindow.superclass.onRender.call(this, a, b);
+        Phlexible.googlemaps.MapWindow.superclass.onRender.call(this, a, b);
     },
 
     renderMap: function(c) {
@@ -324,7 +324,7 @@ Makeweb.googlemaps.MapWindow = Ext.extend(Ext.Window, {
             this.emptyResult();
         }
 
-        Makeweb.googlemaps.MapWindow.superclass.show.call(this);
+        Phlexible.googlemaps.MapWindow.superclass.show.call(this);
     },
 
     activateResultData: function(resultData) {
