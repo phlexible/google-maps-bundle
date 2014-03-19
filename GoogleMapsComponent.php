@@ -8,14 +8,14 @@
 
 namespace Phlexible\GoogleMapsComponent;
 
-use Phlexible\Component\AbstractComponent;
+use Phlexible\Component\Component;
 
 /**
  * Google Maps component
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */
-class GoogleMapsComponent extends AbstractComponent
+class GoogleMapsComponent extends Component
 {
     public function __construct()
     {
