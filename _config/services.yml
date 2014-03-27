@@ -1,15 +1,18 @@
-tags:
-    - ["asset.translation", {page: googlemaps, namespace: "Makeweb.strings.Googlemaps"}]
-
 services:
     googlemapsStatic:
         class: Phlexible\GoogleMapsComponent\StaticMap
 
     # dwoo plugins
-    #googlemapsPluginStatisGoogleMap:
-    #    class: Phlexible\GoogleMapsComponent\Plugin\StaticGoogleMap
-    #    tags:
-    #        - ["dwoo.plugin", {alias: mwStaticGoogleMaps}]
+    googlemapsPluginStatisGoogleMap:
+        class: Phlexible\GoogleMapsComponent\Plugin\StaticGoogleMap
+        tags:
+            - ["dwoo.plugin", {alias: mwStaticGoogleMaps}]
+
+    # fields
+    googlemapsFieldAddress:
+        class: Phlexible\GoogleMapsComponent\Field\AddressField
+        tags:
+            - ["elementtypes.field", {alias: address}]
 
     # listeners
     googlemapsListenerRendererAssign:

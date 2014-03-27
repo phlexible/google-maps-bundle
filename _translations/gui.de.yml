@@ -1,6 +1,4 @@
 googlemaps:
-    component_description: 'Komponente zur Bereitsstellung eines Google Maps API-Keys und statischen Google Maps-Bildern.'
-    component_name: Googlemaps
     address: Adresse
     coordinates: Koordinaten
     street: Strasse

@@ -24,18 +24,4 @@ class GoogleMapsComponent extends Component
             ->setId('googlemaps')
             ->setPackage('phlexible');
     }
-
-    /**
-     * Return fields
-     *
-     * @return array
-     */
-    public function getFields()
-    {
-        $fields = array(
-            'address' => 'Phlexible\GoogleMapsComponent\Field\AddressField',
-        );
-
-        return $fields;
-    }
 }

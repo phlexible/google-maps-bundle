@@ -8,16 +8,16 @@
 
 namespace Phlexible\GoogleMapsComponent\Field;
 
-use Makeweb_Fields_Field_TextField as TextField;
+use Phlexible\ElementtypesComponent\Field\TextField;
 
 /**
  * Address field
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class Makeweb_Googlemaps_Field_AddressField extends TextField
+class AddressField extends TextField
 {
-    public $icon = 'm-googlemaps-component-icon';
+    public $icon = 'p-googlemaps-component-icon';
 
     /**
      * Transform item values
