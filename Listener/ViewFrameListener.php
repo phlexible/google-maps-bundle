@@ -8,7 +8,7 @@
 
 namespace Phlexible\GoogleMapsComponent\Listener;
 
-use Phlexible\FrameComponent\Event\ViewFrameEvent;
+use Phlexible\FrameComponent\Event\ViewEvent;
 
 /**
  * View frame listener
@@ -17,7 +17,7 @@ use Phlexible\FrameComponent\Event\ViewFrameEvent;
  */
 class ViewFrameListener
 {
-    public static function onViewFrame(ViewFrameEvent $event)
+    public static function onViewFrame(ViewEvent $event)
     {
         $request = $event->getRequest();
 
