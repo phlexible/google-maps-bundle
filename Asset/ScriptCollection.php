@@ -26,6 +26,8 @@ class ScriptCollection extends AssetCollection
         $scriptDir = rtrim($scriptDir, '/') . '/';
 
         $assets = array(
+            new FileAsset($scriptDir . 'ux/Ext.ux.form.AddressField.js'),
+
             new FileAsset($scriptDir . 'Definitions.js'),
             new FileAsset($scriptDir . 'MapWindow.js'),
             new FileAsset($scriptDir . 'AddressSearch.js'),
