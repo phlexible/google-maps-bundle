@@ -45,7 +45,7 @@ Phlexible.fields.FieldTypes.addField('address', {
         en: 'Address'
     },
     allowedIn: ['tab','accordion','group','referenceroot'],
-    iconCls: 'm-googlemaps-component-icon',
+    iconCls: 'p-googlemaps-component-icon',
     accordions: ['fieldproperties','fieldlabels','fieldconfiguration','fieldvalues','fieldvalidation'],
     config: {
         properties: {
