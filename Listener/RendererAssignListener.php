@@ -37,8 +37,7 @@ class RendererAssignListener
     {
         $view = $event->getRenderer()->getView();
 
-        if ($this->googleMapsApiKey)
-        {
+        if ($this->googleMapsApiKey) {
             $view->mapsApiKey = $this->googleMapsApiKey;
         }
     }

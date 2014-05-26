@@ -17,13 +17,12 @@ use Phlexible\FrameComponent\Event\ViewEvent;
  */
 class ViewFrameListener
 {
-    public static function onViewFrame(ViewEvent $event)
+    public function onViewFrame(ViewEvent $event)
     {
         $request = $event->getRequest();
 
         $protocol = 'http://';
-        if ($request instanceof \Zend_Controller_Request_Http && $request->isSecure())
-        {
+        if ($request instanceof \Zend_Controller_Request_Http && $request->isSecure()) {
             $protocol = 'https://';
         }
 

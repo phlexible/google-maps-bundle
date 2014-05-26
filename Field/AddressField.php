@@ -30,15 +30,10 @@ class AddressField extends TextField
      */
     protected function _transform(array $item, array $media, array $options)
     {
-        if (!empty($item['data_content']))
-        {
-            try
-            {
+        if (!empty($item['data_content'])) {
+            try {
                 $item['rawContent'] = json_decode($item['data_content']);
-            }
-            catch (\Exception $e)
-            {
-                \MWF_Log::exception($e);
+            } catch (\Exception $e) {
                 $item['rawContent'] = '';
             }
 
