@@ -1,34 +1,34 @@
 services:
-    googlemapsStatic:
+    googlemaps.staticmap:
         class: Phlexible\GoogleMapsComponent\StaticMap
 
     # dwoo plugins
-    googlemapsPluginStatisGoogleMap:
+    googlemaps.dwoo.plugin.staticmap:
         class: Phlexible\GoogleMapsComponent\Plugin\StaticGoogleMap
         tags:
-            - ["dwoo.plugin", {alias: mwStaticGoogleMaps}]
+            - {name: "dwoo.plugin", alias: mwStaticGoogleMaps}
 
     # fields
-    googlemapsFieldAddress:
+    googlemaps.field.address:
         class: Phlexible\GoogleMapsComponent\Field\AddressField
         tags:
-            - ["elementtypes.field", {alias: address}]
+            - {name: "elementtypes.field", alias: address}
 
     # listeners
-    googlemapsListenerRendererAssign:
+    googlemaps.listener.rendererassign:
         class: Phlexible\GoogleMapsComponent\Listener\RendererAssignListener
         arguments: ["%googlemaps.api_key%"]
         tags:
-            - ["event.listener", {event: renderers.assign, method: onRendererAssign}]
+            - {name: "event.listener", event: renderers.assign, method: onRendererAssign}
 
-    googlemapsListenerViewFrame:
+    googlemaps.listener.viewframe:
         class: Phlexible\GoogleMapsComponent\Listener\ViewFrameListener
         tags:
-            - ["event.listener", {event: frame.view_frame, method: onViewFrame}]
+            - {name: "event.listener", event: frame.view_frame, method: onViewFrame}
 
     # assets
-    googlemapsAssetScripts:
+    googlemaps.asset.scripts:
         class: Phlexible\GoogleMapsComponent\Asset\ScriptCollection
         arguments: ["%googlemaps.asset.script_path%"]
         tags:
-            - ["asset.script", {priority: -500}]
+            - {name: "asset.script", priority: -500}

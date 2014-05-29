@@ -43,7 +43,7 @@ class StaticGoogleMap extends Plugin
         // We have latitude and longitude to create the static map
         if (!empty($latitude) && !empty($longitude)) {
             try {
-                $googlemapsStatic = \MWF_Registry::get('container')->googlemapsStatic;
+                $googlemapsStatic = \MWF_Registry::get('container')->get('googlemaps.staticmap');
                 $data = $this->dwoo->getData();
                 $useHttps = !empty($data['ssl']);
                 $source = $googlemapsStatic->getUri($latitude, $longitude, $width, $height, $zoom, $useHttps);

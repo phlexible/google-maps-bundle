@@ -11,11 +11,11 @@ namespace Phlexible\GoogleMapsComponent;
 use Phlexible\Component\Component;
 
 /**
- * Google Maps component
+ * Google Maps bundle
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */
-class GoogleMapsComponent extends Component
+class GoogleMapsBundle extends Component
 {
     public function __construct()
     {
