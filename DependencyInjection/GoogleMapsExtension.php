@@ -25,10 +25,10 @@ class GoogleMapsExtension extends Extension
      */
     public function load(array $config, ContainerBuilder $container)
     {
-        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../_config'));
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter('googlemaps.asset.script_path', __DIR__ . '/../_scripts');
+        $container->setParameter('googlemaps.asset.script_path', __DIR__ . '/../Resources/scripts');
         $container->setParameter('googlemaps.api_key', '');
     }
 }

@@ -8,20 +8,13 @@
 
 namespace Phlexible\GoogleMapsComponent;
 
-use Phlexible\Component\Component;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
  * Google Maps bundle
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */
-class GoogleMapsBundle extends Component
+class GoogleMapsBundle extends Bundle
 {
-    public function __construct()
-    {
-        $this
-            ->setVersion('0.6.0')
-            ->setId('googlemaps')
-            ->setPackage('phlexible');
-    }
 }
