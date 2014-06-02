@@ -19,12 +19,12 @@ services:
         class: Phlexible\GoogleMapsComponent\Listener\RendererAssignListener
         arguments: ["%googlemaps.api_key%"]
         tags:
-            - {name: "event.listener", event: renderers.assign, method: onRendererAssign}
+            - {name: "kernel.event_listener", event: renderers.assign, method: onRendererAssign}
 
     googlemaps.listener.viewframe:
         class: Phlexible\GoogleMapsComponent\Listener\ViewFrameListener
         tags:
-            - {name: "event.listener", event: frame.view_frame, method: onViewFrame}
+            - {name: "kernel.event_listener", event: frame.view_frame, method: onViewFrame}
 
     # assets
     googlemaps.asset.scripts:
