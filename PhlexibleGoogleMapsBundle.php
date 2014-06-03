@@ -15,6 +15,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */
-class GoogleMapsBundle extends Bundle
+class PhlexibleGoogleMapsBundle extends Bundle
 {
 }

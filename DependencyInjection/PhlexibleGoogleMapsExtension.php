@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */
-class GoogleMapsExtension extends Extension
+class PhlexibleGoogleMapsExtension extends Extension
 {
     /**
      * {@inheritdoc}
