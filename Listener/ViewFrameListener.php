@@ -8,7 +8,7 @@
 
 namespace Phlexible\GoogleMapsComponent\Listener;
 
-use Phlexible\FrameComponent\Event\ViewEvent;
+use Phlexible\GuiComponent\Event\ViewEvent;
 
 /**
  * View frame listener

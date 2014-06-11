@@ -24,7 +24,7 @@ services:
     googlemaps.listener.viewframe:
         class: Phlexible\GoogleMapsComponent\Listener\ViewFrameListener
         tags:
-            - {name: "kernel.event_listener", event: frame.view_frame, method: onViewFrame}
+            - {name: "kernel.event_listener", event: gui.view_frame, method: onViewFrame}
 
     # assets
     googlemaps.asset.scripts:
