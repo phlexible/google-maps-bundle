@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsComponent\Listener;
+namespace Phlexible\GoogleMapsComponent\EventListener;
 
 use Phlexible\GuiComponent\Event\ViewEvent;
 
@@ -17,6 +17,9 @@ use Phlexible\GuiComponent\Event\ViewEvent;
  */
 class ViewFrameListener
 {
+    /**
+     * @param ViewEvent $event
+     */
     public function onViewFrame(ViewEvent $event)
     {
         $request = $event->getRequest();

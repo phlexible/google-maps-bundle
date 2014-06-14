@@ -8,21 +8,15 @@ services:
         tags:
             - {name: "dwoo.plugin", alias: mwStaticGoogleMaps}
 
-    # fields
-    googlemaps.field.address:
-        class: Phlexible\GoogleMapsComponent\Field\AddressField
-        tags:
-            - {name: "elementtypes.field", alias: address}
-
-    # listeners
+    # event listeners
     googlemaps.listener.rendererassign:
-        class: Phlexible\GoogleMapsComponent\Listener\RendererAssignListener
+        class: Phlexible\GoogleMapsComponent\EventListener\RendererAssignListener
         arguments: ["%googlemaps.api_key%"]
         tags:
             - {name: "kernel.event_listener", event: renderers.assign, method: onRendererAssign}
 
     googlemaps.listener.viewframe:
-        class: Phlexible\GoogleMapsComponent\Listener\ViewFrameListener
+        class: Phlexible\GoogleMapsComponent\EventListener\ViewFrameListener
         tags:
             - {name: "kernel.event_listener", event: gui.view_frame, method: onViewFrame}
 
@@ -32,3 +26,9 @@ services:
         arguments: ["%googlemaps.asset.script_path%"]
         tags:
             - {name: "asset.script", priority: -500}
+
+    # fields
+    googlemaps.field.address:
+        class: Phlexible\GoogleMapsComponent\Field\AddressField
+        tags:
+            - {name: "elementtypes.field", alias: address}
