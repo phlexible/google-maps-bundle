@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsComponent;
+namespace Phlexible\GoogleMapsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

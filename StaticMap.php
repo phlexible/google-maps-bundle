@@ -6,7 +6,7 @@
  * @license   proprietery
  */
 
-namespace Phlexible\GoogleMapsComponent;
+namespace Phlexible\GoogleMapsBundle;
 
 /**
  * Class for fetching the static google maps uri

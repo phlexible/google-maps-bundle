@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsComponent\DependencyInjection;
+namespace Phlexible\GoogleMapsBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -28,7 +28,6 @@ class PhlexibleGoogleMapsExtension extends Extension
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $container->setParameter('googlemaps.asset.script_path', __DIR__ . '/../Resources/scripts');
         $container->setParameter('googlemaps.api_key', '');
     }
 }
