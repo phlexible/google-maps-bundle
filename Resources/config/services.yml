@@ -5,13 +5,15 @@ services:
     # asset providers
     phlexible_google_maps.asset.scripts:
         class: Phlexible\GoogleMapsBundle\AssetProvider\GoogleMapsAssetProvider
+        public: false
         arguments: [@file_locator]
         tags:
             - {name: phlexible_gui.asset.provider, priority: -500}
 
     # dwoo plugins
-    phlexible_google_maps.dwoo.plugin.staticmap:
+    phlexible_google_maps.dwoo.plugin.static_map:
         class: Phlexible\GoogleMapsBundle\Plugin\StaticGoogleMap
+        public: false
         tags:
             - {name: phlexible_dwoo.plugin, alias: mwStaticGoogleMaps}
 
@@ -30,5 +32,6 @@ services:
     # fields
     phlexible_google_maps.field.address:
         class: Phlexible\GoogleMapsBundle\Field\AddressField
+        public: false
         tags:
             - {name: phlexible_elementtype.field, alias: address}
