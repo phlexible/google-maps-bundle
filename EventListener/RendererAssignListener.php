@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsBundle\EventListener;
+namespace Phlexible\Bundle\GoogleMapsBundle\EventListener;
 
 /**
  * Renderer assign listener

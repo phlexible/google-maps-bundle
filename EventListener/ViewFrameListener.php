@@ -6,9 +6,9 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsBundle\EventListener;
+namespace Phlexible\Bundle\GoogleMapsBundle\EventListener;
 
-use Phlexible\GuiBundle\Event\ViewEvent;
+use Phlexible\Bundle\GuiBundle\Event\ViewEvent;
 
 /**
  * View frame listener

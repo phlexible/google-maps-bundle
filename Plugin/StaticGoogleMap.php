@@ -6,7 +6,7 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsBundle\Plugin;
+namespace Phlexible\Bundle\GoogleMapsBundle\Plugin;
 
 use Dwoo\Plugin;
 use Symfony\Component\DependencyInjection\ContainerInterface;

@@ -6,9 +6,9 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsBundle\Field;
+namespace Phlexible\Bundle\GoogleMapsBundle\Field;
 
-use Phlexible\ElementtypeBundle\Field\TextField;
+use Phlexible\Bundle\ElementtypeBundle\Field\TextField;
 
 /**
  * Address field

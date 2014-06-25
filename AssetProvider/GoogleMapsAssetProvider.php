@@ -6,11 +6,11 @@
  * @license   proprietary
  */
 
-namespace Phlexible\GoogleMapsBundle\AssetProvider;
+namespace Phlexible\Bundle\GoogleMapsBundle\AssetProvider;
 
 use Assetic\Asset\AssetCollection;
 use Assetic\Asset\FileAsset;
-use Phlexible\GuiBundle\AssetProvider\AssetProviderInterface;
+use Phlexible\Bundle\GuiBundle\AssetProvider\AssetProviderInterface;
 use Symfony\Component\HttpKernel\Config\FileLocator;
 
 /**
