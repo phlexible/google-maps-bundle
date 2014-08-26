@@ -1,7 +1,7 @@
 Phlexible.fields.Registry.addFactory('address', function(parentConfig, item, valueStructure, element, repeatableId) {
 	element.prototypes.incCount(item.dsId);
 
-	var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, element, repeatableId);
+	var config = Phlexible.fields.FieldHelper.defaults(parentConfig, item, valueStructure, element, repeatableId);
 
 	Ext.apply(config, {
 		xtype: 'addressfield',
@@ -21,12 +21,6 @@ Phlexible.fields.Registry.addFactory('address', function(parentConfig, item, val
 		supportsUnlink: {unlinkEl: 'trigger'},
 		supportsRepeatable: true
 	});
-
-    Ext.each(valueStructure.values, function (value) {
-        if (value.dsId === item.dsId) {
-            config.value = value.content;
-        }
-    });
 
 	if (config.readOnly) {
 		config.editable = false;
