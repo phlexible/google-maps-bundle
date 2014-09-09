@@ -17,28 +17,19 @@ use Phlexible\Bundle\ElementtypeBundle\Field\TextField;
  */
 class AddressField extends TextField
 {
-    public $icon = 'p-googlemaps-component-icon';
+    /**
+     * {@inheritdoc}
+     */
+    public function getIcon()
+    {
+        return 'p-googlemaps-component-icon';
+    }
 
     /**
-     * Transform item values
-     *
-     * @param array $item
-     * @param array $media
-     * @param array $options
-     *
-     * @return array
+     * {@inheritdoc}
      */
-    protected function _transform(array $item, array $media, array $options)
+    public function getDataType()
     {
-        if (!empty($item['data_content'])) {
-            try {
-                $item['rawContent'] = json_decode($item['data_content']);
-            } catch (\Exception $e) {
-                $item['rawContent'] = '';
-            }
-
-        }
-
-        return $item;
+        return 'array';
     }
 }
