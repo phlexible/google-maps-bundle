@@ -5,10 +5,8 @@ Phlexible.fields.Registry.addFactory('address', function(parentConfig, item, val
 		xtype: 'addressfield',
 		hiddenName: config.name,
 
-		value: item.rawContent ? item.rawContent.formatted : null,
 		width: (parseInt(item.configuration.width, 10) || 200),
 
-		resultData: item.rawContent || null,
 		hideTrigger1: (item.rawContent ? false : true),
 		hideTrigger2: false,
 
@@ -19,6 +17,11 @@ Phlexible.fields.Registry.addFactory('address', function(parentConfig, item, val
 		supportsUnlink: {unlinkEl: 'trigger'},
 		supportsRepeatable: true
 	});
+
+    if (config.value) {
+        config.resultData = config.value;
+        config.value = config.value.query;
+    }
 
 	if (config.readOnly) {
 		config.editable = false;
