@@ -25,7 +25,7 @@ class ViewFrameListener
         $request = $event->getRequest();
 
         $protocol = 'http://';
-        if ($request instanceof \Zend_Controller_Request_Http && $request->isSecure()) {
+        if ($request && $request->isSecure()) {
             $protocol = 'https://';
         }
 
