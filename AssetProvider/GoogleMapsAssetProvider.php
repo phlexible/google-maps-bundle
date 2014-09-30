@@ -64,7 +64,7 @@ class GoogleMapsAssetProvider implements AssetProviderInterface
             new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/MapWindow.js')),
             new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/AddressSearch.js')),
 
-            new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/fields/AddressField.js')),
+            new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/field/AddressField.js')),
         ));
 
         return $collection;
