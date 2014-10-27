@@ -8,10 +8,7 @@
 
 namespace Phlexible\Bundle\GoogleMapsBundle\AssetProvider;
 
-use Assetic\Asset\AssetCollection;
-use Assetic\Asset\FileAsset;
 use Phlexible\Bundle\GuiBundle\AssetProvider\AssetProviderInterface;
-use Symfony\Component\HttpKernel\Config\FileLocator;
 
 /**
  * Google maps asset provider
@@ -21,28 +18,13 @@ use Symfony\Component\HttpKernel\Config\FileLocator;
 class GoogleMapsAssetProvider implements AssetProviderInterface
 {
     /**
-     * @var FileLocator
-     */
-    private $locator;
-
-    /**
-     * @param FileLocator $locator
-     */
-    public function __construct(FileLocator $locator)
-    {
-        $this->locator = $locator;
-    }
-
-    /**
      * {@inheritDoc}
      */
     public function getUxScriptsCollection()
     {
-        $collection = new AssetCollection(array(
-            new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/ux/Ext.ux.form.AddressField.js')),
-        ));
-
-        return $collection;
+        return array(
+            '@PhlexibleGoogleMapsBundle/Resources/scripts/ux/Ext.ux.form.AddressField.js',
+        );
     }
 
     /**
@@ -58,16 +40,14 @@ class GoogleMapsAssetProvider implements AssetProviderInterface
      */
     public function getScriptsCollection()
     {
-        $collection = new AssetCollection(array(
-            new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/Definitions.js')),
+        return array(
+            '@PhlexibleGoogleMapsBundle/Resources/scripts/Definitions.js',
 
-            new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/MapWindow.js')),
-            new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/AddressSearch.js')),
+            '@PhlexibleGoogleMapsBundle/Resources/scripts/MapWindow.js',
+            '@PhlexibleGoogleMapsBundle/Resources/scripts/AddressSearch.js',
 
-            new FileAsset($this->locator->locate('@PhlexibleGoogleMapsBundle/Resources/scripts/field/AddressField.js')),
-        ));
-
-        return $collection;
+            '@PhlexibleGoogleMapsBundle/Resources/scripts/field/AddressField.js',
+        );
     }
 
     /**

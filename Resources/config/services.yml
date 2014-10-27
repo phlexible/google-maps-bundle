@@ -6,9 +6,8 @@ services:
     phlexible_google_maps.asset.scripts:
         class: Phlexible\Bundle\GoogleMapsBundle\AssetProvider\GoogleMapsAssetProvider
         public: false
-        arguments: [@file_locator]
         tags:
-            - {name: phlexible_gui.asset.provider, priority: -500}
+            - {name: phlexible_gui.asset_provider, priority: -500}
 
     # dwoo plugins
     phlexible_google_maps.dwoo.plugin.static_map:
