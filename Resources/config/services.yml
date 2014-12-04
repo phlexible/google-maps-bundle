@@ -17,12 +17,6 @@ services:
             - {name: phlexible_dwoo.plugin, alias: mwStaticGoogleMaps}
 
     # event listeners
-    phlexible_google_maps.listener.rendererassign:
-        class: Phlexible\Bundle\GoogleMapsBundle\EventListener\RendererAssignListener
-        arguments: [%googlemaps.api_key%]
-        tags:
-            - {name: kernel.event_listener, event: xxxrenderers.assign, method: onRendererAssign}
-
     phlexible_google_maps.listener.viewframe:
         class: Phlexible\Bundle\GoogleMapsBundle\EventListener\ViewFrameListener
         tags:
