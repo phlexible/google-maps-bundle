@@ -23,7 +23,7 @@ class GoogleMapsAssetProvider implements AssetProviderInterface
     public function getUxScriptsCollection()
     {
         return array(
-            '@PhlexibleGoogleMapsBundle/Resources/scripts/ux/Ext.ux.form.AddressField.js',
+            '@PhlexibleGoogleMapsBundle/Resources/scripts-ux/Ext.ux.form.AddressField.js',
         );
     }
 
