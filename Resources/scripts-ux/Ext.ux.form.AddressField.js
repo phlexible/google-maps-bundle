@@ -1,3 +1,5 @@
+Ext.ns('Ext.ux.form');
+
 Ext.ux.form.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
 	trigger1Class: 'x-form-clear-trigger',
 	trigger2Class: 'm-form-link-trigger',

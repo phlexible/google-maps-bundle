@@ -1,3 +1,5 @@
+Ext.ns('Phlexible.googlemaps');
+
 Phlexible.googlemaps.AddressSearch = function(config) {
     config = config || {};
 

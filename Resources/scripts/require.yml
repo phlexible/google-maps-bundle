@@ -1,0 +1,4 @@
+require:
+    - field/AddressField
+    - AddressSearch
+    - MapWindow

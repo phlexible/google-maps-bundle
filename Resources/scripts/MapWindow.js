@@ -1,3 +1,5 @@
+Ext.ns('Phlexible.googlemaps');
+
 Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
     title: Phlexible.googlemaps.Strings.address,
     strings: Phlexible.googlemaps.Strings,
