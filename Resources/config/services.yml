@@ -2,20 +2,6 @@ services:
     phlexible_google_maps.staticmap:
         class: Phlexible\Bundle\GoogleMapsBundle\StaticMap
 
-    # asset providers
-    phlexible_google_maps.asset.scripts:
-        class: Phlexible\Bundle\GoogleMapsBundle\AssetProvider\GoogleMapsAssetProvider
-        public: false
-        tags:
-            - {name: phlexible_gui.asset_provider, priority: -500}
-
-    # dwoo plugins
-    phlexible_google_maps.dwoo.plugin.static_map:
-        class: Phlexible\Bundle\GoogleMapsBundle\Plugin\StaticGoogleMap
-        public: false
-        tags:
-            - {name: phlexible_dwoo.plugin, alias: mwStaticGoogleMaps}
-
     # event listeners
     phlexible_google_maps.listener.viewframe:
         class: Phlexible\Bundle\GoogleMapsBundle\EventListener\ViewFrameListener
