@@ -1,6 +1,6 @@
-Ext.ns('Phlexible.googlemaps');
+Ext.provide('Phlexible.googlemaps.util.AddressSearch');
 
-Phlexible.googlemaps.AddressSearch = function(config) {
+Phlexible.googlemaps.util.AddressSearch = function(config) {
     config = config || {};
 
     /**
@@ -64,7 +64,7 @@ Phlexible.googlemaps.AddressSearch = function(config) {
         delete this.listeners;
     }
 };
-Ext.extend(Phlexible.googlemaps.AddressSearch, Ext.util.Observable, {
+Ext.extend(Phlexible.googlemaps.util.AddressSearch, Ext.util.Observable, {
     pendingQuery: null,
     pendingResults: null,
     resultData: null,

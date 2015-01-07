@@ -1,4 +1,6 @@
-Ext.ns('Phlexible.googlemaps');
+Ext.provide('Phlexible.googlemaps.MapWindow');
+
+Ext.require('Phlexible.googlemaps.util.AddressSearch');
 
 Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
     title: Phlexible.googlemaps.Strings.address,
@@ -195,7 +197,7 @@ Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
 
         }];
 
-        this.addressSearch = new Phlexible.googlemaps.AddressSearch({
+        this.addressSearch = new Phlexible.googlemaps.util.AddressSearch({
             listeners: {
                 results: {
                     fn: function(addressSearch, results, status) {

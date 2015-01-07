@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elementtype id="317da469-c702-4661-e0f2-35a85e1b4051" uniqueId="cm-address" revision="9" type="reference"
+             icon="_fallback.gif" defaultTab="0">
+    <titles>
+        <title language="de">CM Address</title>
+        <title language="en">CM Address</title>
+    </titles>
+    <comment/>
+    <metasetId/>
+    <defaultContentTab/>
+    <createdAt>2014-09-10 13:46:18</createdAt>
+    <createUser>ailski</createUser>
+    <modifiedAt>2014-09-26 17:22:04</modifiedAt>
+    <modifyUser>ailski</modifyUser>
+    <structure>
+        <node type="referenceroot" dsId="57df9071-a915-476f-be0e-6bed1992c782" name="root">
+            <children>
+                <node type="group" dsId="c64c68d6-0730-0001-61ca-1e261a701cc9" name="cm_address">
+                    <labels>
+                        <label type="fieldLabel" language="de">Adresse</label>
+                        <label type="fieldLabel" language="en">Address</label>
+                    </labels>
+                    <configuration>
+                        <item key="repeat_max" type="string">10</item>
+                        <item key="repeat_default" type="string">1</item>
+                        <item key="group_show_border" type="boolean">1</item>
+                        <item key="text_de" type="string">Hier sollte eine Auswahl des Formulars möglich sein. Ist es aber nicht :(</item>
+                        <item key="text_en" type="string">Normally you could select a form process here, but you can't :(</item>
+                    </configuration>
+                    <children>
+                        <node type="address" dsId="c64c68f6-4100-0001-68e2-14e020b0af20" name="cm_address_address">
+                            <labels>
+                                <label type="fieldLabel" language="de">Adresse</label>
+                                <label type="fieldLabel" language="en">Address</label>
+                            </labels>
+                            <configuration>
+                                <item key="synchronized" type="string">no</item>
+                                <item key="required" type="string">no</item>
+                            </configuration>
+                        </node>
+                    </children>
+                </node>
+            </children>
+        </node>
+    </structure>
+</elementtype>
