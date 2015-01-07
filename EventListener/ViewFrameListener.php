@@ -22,14 +22,7 @@ class ViewFrameListener
      */
     public function onViewFrame(ViewEvent $event)
     {
-        $request = $event->getRequest();
-
-        $protocol = 'http://';
-        if ($request && $request->isSecure()) {
-            $protocol = 'https://';
-        }
-
         $view = $event->getView();
-        $view->addScript($protocol . 'maps.google.com/maps/api/js?sensor=false', 'text/javascript');
+        $view->addScript('//maps.google.com/maps/api/js?sensor=false', 'text/javascript');
     }
 }
