@@ -1,5 +1,6 @@
 Ext.require('Phlexible.fields.Registry');
 Ext.require('Phlexible.fields.FieldTypes');
+Ext.require('Phlexible.fields.FieldHelper');
 Ext.require('Phlexible.googlemaps.field.AddressField');
 
 Phlexible.fields.Registry.addFactory('address', function(parentConfig, item, valueStructure, element, repeatableId) {
