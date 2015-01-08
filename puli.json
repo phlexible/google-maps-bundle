@@ -1,5 +1,6 @@
 {
     "resources": {
+        "/phlexible/icons/googlemaps": "Resources/public/icons",
         "/phlexible/scripts/googlemaps": "Resources/scripts"
     }
 }
