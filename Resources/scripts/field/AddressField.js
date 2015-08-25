@@ -1,6 +1,7 @@
 Ext.provide('Phlexible.googlemaps.field.AddressField');
 
-Ext.require('Phlexible.googlemaps.MapWindow');
+Ext.require('Phlexible.googlemaps.window.MapWindow');
+Ext.require('Phlexible.googlemaps.util.AddressSearch');
 
 Phlexible.googlemaps.field.AddressField = Ext.extend(Ext.form.TwinTriggerField, {
 	trigger1Class: 'x-form-clear-trigger',
@@ -19,7 +20,7 @@ Phlexible.googlemaps.field.AddressField = Ext.extend(Ext.form.TwinTriggerField, 
 
 		this.task = new Ext.util.DelayedTask(this.searchAddress, this);
 
-		this.addressSearch = new Phlexible.googlemaps.AddressSearch({
+		this.addressSearch = new Phlexible.googlemaps.util.AddressSearch({
 			resultData: this.resultData,
 			listeners: {
 				results: function(addressSearch, results, status) {
@@ -49,7 +50,7 @@ Phlexible.googlemaps.field.AddressField = Ext.extend(Ext.form.TwinTriggerField, 
 		});
 
 		if (!Phlexible.googlemaps.mapwin) {
-			Phlexible.googlemaps.mapwin = new Phlexible.googlemaps.MapWindow();
+			Phlexible.googlemaps.mapwin = new Phlexible.googlemaps.window.MapWindow();
 		}
 
 		Phlexible.googlemaps.field.AddressField.superclass.initComponent.call(this);

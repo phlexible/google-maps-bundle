@@ -1,8 +1,8 @@
-Ext.provide('Phlexible.googlemaps.MapWindow');
+Ext.provide('Phlexible.googlemaps.window.MapWindow');
 
 Ext.require('Phlexible.googlemaps.util.AddressSearch');
 
-Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
+Phlexible.googlemaps.window.MapWindow = Ext.extend(Ext.Window, {
     title: Phlexible.googlemaps.Strings.address,
     strings: Phlexible.googlemaps.Strings,
     width: 800,
@@ -233,7 +233,7 @@ Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
             }
         });
 
-        Phlexible.googlemaps.MapWindow.superclass.initComponent.call(this);
+        Phlexible.googlemaps.window.MapWindow.superclass.initComponent.call(this);
     },
 
     updateFromForm: function() {
@@ -252,7 +252,7 @@ Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
     },
 
     xonRender: function(a,b) {
-        Phlexible.googlemaps.MapWindow.superclass.onRender.call(this, a, b);
+        Phlexible.googlemaps.window.MapWindow.superclass.onRender.call(this, a, b);
     },
 
     renderMap: function(c) {
@@ -328,7 +328,7 @@ Phlexible.googlemaps.MapWindow = Ext.extend(Ext.Window, {
             this.emptyResult();
         }
 
-        Phlexible.googlemaps.MapWindow.superclass.show.call(this);
+        Phlexible.googlemaps.window.MapWindow.superclass.show.call(this);
     },
 
     activateResultData: function(resultData) {
