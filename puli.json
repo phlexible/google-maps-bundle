@@ -1,7 +1,17 @@
 {
     "version": "1.0",
     "path-mappings": {
-        "/phlexible/icons/googlemaps": "Resources/public/icons",
-        "/phlexible/scripts/googlemaps": "Resources/scripts"
+        "/phlexible/phlexiblegooglemaps/icons": "Resources/public/icons",
+        "/phlexible/phlexiblegooglemaps/scripts": "Resources/scripts"
+    },
+    "bindings": {
+        "abc07f0e-d2ed-5d27-ac1c-169795f687e4": {
+            "query": "/phlexible/phlexiblegooglemaps/scripts/**/*.js",
+            "type": "phlexible/scripts"
+        },
+        "def69620-cbb2-533e-85a3-30b703c1595c": {
+            "query": "/phlexible/phlexiblegooglemaps/icons/*.png",
+            "type": "phlexible/icons"
+        }
     }
 }
