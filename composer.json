@@ -3,6 +3,7 @@
     "description": "phlexible google maps bundle",
     "license": "proprietary",
 	"type": "symfony-bundle",
+    "keywords": ["googlemaps"],
     "autoload": {
         "psr-4": {
             "Phlexible\\Bundle\\GoogleMapsBundle\\": ""
@@ -23,9 +24,6 @@
             }
         }
     ],
-    "config": {
-        "bin-dir": "bin"
-    },
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
