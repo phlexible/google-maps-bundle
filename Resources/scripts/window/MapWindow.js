@@ -247,12 +247,8 @@ Phlexible.googlemaps.window.MapWindow = Ext.extend(Ext.Window, {
         this.addressSearch.resultData.address.region = values.region;
         this.addressSearch.resultData.address.state = values.state;
         this.addressSearch.resultData.address.country = values.country;
-        this.addressSearch.resultData.geometry.lat = values.lat;
-        this.addressSearch.resultData.geometry.lng = values.lng;
-    },
-
-    xonRender: function(a,b) {
-        Phlexible.googlemaps.window.MapWindow.superclass.onRender.call(this, a, b);
+        this.addressSearch.resultData.geometry.lat = parseFloat(values.lat);
+        this.addressSearch.resultData.geometry.lng = parseFloat(values.lng);
     },
 
     renderMap: function(c) {
