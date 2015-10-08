@@ -137,8 +137,8 @@ Phlexible.googlemaps.window.MapWindow = Ext.extend(Ext.Window, {
                     resultData.address.region = values.region;
                     resultData.address.state = values.state;
                     resultData.address.country = values.country;
-                    resultData.geometry.lat = values.lat;
-                    resultData.geometry.lng = values.lng;
+                    resultData.geometry.lat = parseFloat(values.lat);
+                    resultData.geometry.lng = parseFloat(values.lng);
 
                     this.callerAddressSearch.setResultData(resultData);
                     this.hide();
