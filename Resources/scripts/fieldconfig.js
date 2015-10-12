@@ -25,7 +25,7 @@ Phlexible.fields.Registry.addFactory('address', function(parentConfig, item, val
 
     if (config.value) {
         config.resultData = config.value;
-        config.value = config.value.query;
+        config.value = config.value.formatted || config.value.query;
     }
 
 	if (config.readOnly) {
