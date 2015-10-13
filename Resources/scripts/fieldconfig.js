@@ -53,6 +53,7 @@ Phlexible.fields.FieldTypes.addField('address', {
 		'group',
 		'referenceroot'
 	],
+    allowMap: true,
     config: {
         labels: {
             field: 1,
