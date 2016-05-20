@@ -30,6 +30,6 @@ class AddressField extends TextField
      */
     public function getDataType()
     {
-        return 'array';
+        return 'json';
     }
 }
