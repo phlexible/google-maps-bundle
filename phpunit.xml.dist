@@ -7,7 +7,7 @@
          syntaxCheck="true"
          verbose="true">
     <testsuites>
-        <testsuite name="focal-point-bundle">
+        <testsuite name="google-maps-bundle">
             <directory>Tests</directory>
         </testsuite>
     </testsuites>
