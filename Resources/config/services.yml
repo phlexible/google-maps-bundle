@@ -1,7 +1,4 @@
 services:
-    phlexible_google_maps.staticmap:
-        class: Phlexible\Bundle\GoogleMapsBundle\StaticMap
-
     # event listeners
     phlexible_google_maps.listener.viewframe:
         class: Phlexible\Bundle\GoogleMapsBundle\EventListener\ViewFrameListener
