@@ -21,18 +21,33 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ViewFrameListenerTest extends \PHPUnit_Framework_TestCase
 {
-    public function testOnViewFrame()
+    public function testOnViewFrameWithoutApiKey()
     {
         $dispatcher = $this->prophesize(EventDispatcherInterface::class);
         $request = $this->prophesize(Request::class);
         $view = new IndexView($dispatcher->reveal());
         $event = new ViewEvent($request->reveal(), $view);
 
-        $listener = new ViewFrameListener();
+        $listener = new ViewFrameListener(null);
         $listener->onViewFrame($event);
 
         $data = $view->get($request->reveal());
 
-        $this->assertSame('<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>'.PHP_EOL, $data);
+        $this->assertSame('<script type="text/javascript" src="//maps.google.com/maps/api/js"></script>'.PHP_EOL, $data);
+    }
+
+    public function testOnViewFrameWithApiKey()
+    {
+        $dispatcher = $this->prophesize(EventDispatcherInterface::class);
+        $request = $this->prophesize(Request::class);
+        $view = new IndexView($dispatcher->reveal());
+        $event = new ViewEvent($request->reveal(), $view);
+
+        $listener = new ViewFrameListener('testKey');
+        $listener->onViewFrame($event);
+
+        $data = $view->get($request->reveal());
+
+        $this->assertSame('<script type="text/javascript" src="//maps.google.com/maps/api/js?key=testKey"></script>'.PHP_EOL, $data);
     }
 }

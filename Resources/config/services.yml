@@ -2,6 +2,8 @@ services:
     # event listeners
     phlexible_google_maps.listener.viewframe:
         class: Phlexible\Bundle\GoogleMapsBundle\EventListener\ViewFrameListener
+        arguments:
+            - "%phlexible_google_maps.api_key%"
         tags:
             - {name: kernel.event_listener, event: phlexible_gui.view_frame, method: onViewFrame}
 
