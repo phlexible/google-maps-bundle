@@ -6,8 +6,6 @@ The PhlexibleGoogleMapsBundle adds support for country-based content support in 
 Installation
 ------------
 
-Installation is a 3 step process:
-
 1. Download PhlexibleGoogleMapsBundle using composer
 2. Enable the Bundle
 3. Clear the symfony cache
