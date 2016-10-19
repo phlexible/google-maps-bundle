@@ -17,7 +17,7 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 
 /**
- * Google maps extension
+ * Google maps extension.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

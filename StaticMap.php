@@ -12,7 +12,7 @@
 namespace Phlexible\Bundle\GoogleMapsBundle;
 
 /**
- * Class for fetching the static google maps uri
+ * Class for fetching the static google maps uri.
  *
  * @author Marcus Stöhr <ms@brainbits.net>
  */
@@ -28,26 +28,27 @@ class StaticMap
      * @param int    $zoom
      * @param bool   $useHttps
      *
-     * @return  string  Uri of the static Google Map
+     * @return string Uri of the static Google Map
      */
     public function getUri($latitude, $longitude, $width, $height, $zoom = 10, $useHttps = false)
     {
-        $latitude  = (string) $latitude;
+        $latitude = (string) $latitude;
         $longitude = (string) $longitude;
-        $width     = (int) $width;
-        $height    = (int) $height;
-        $zoom      = (int) $zoom;
+        $width = (int) $width;
+        $height = (int) $height;
+        $zoom = (int) $zoom;
 
-        return ($useHttps ? 'https' : 'http') . '://maps.google.com/staticmap'
-            . '?markers=' . (string) $latitude . ',' . (string) $longitude
-            . '&size=' . $width . 'x' . $height
-            . '&zoom=' . $zoom;
+        return ($useHttps ? 'https' : 'http').'://maps.google.com/staticmap'
+            .'?markers='.(string) $latitude.','.(string) $longitude
+            .'&size='.$width.'x'.$height
+            .'&zoom='.$zoom;
     }
 
     /**
-     * Check if the google maps api-key is available
+     * Check if the google maps api-key is available.
      *
      * @return bool
+     *
      * @deprecated
      */
     public function isAvailable()

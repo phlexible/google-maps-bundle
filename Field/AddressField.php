@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\GoogleMapsBundle\Field;
 use Phlexible\Bundle\ElementtypeBundle\Field\TextField;
 
 /**
- * Address field
+ * Address field.
  *
  * @author Stephan Wentz <sw@brainbits.net>
  */

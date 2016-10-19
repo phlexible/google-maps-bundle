@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\GoogleMapsBundle;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 /**
- * Google Maps bundle
+ * Google Maps bundle.
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */

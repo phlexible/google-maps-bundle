@@ -14,7 +14,7 @@ namespace Phlexible\Bundle\GoogleMapsBundle\EventListener;
 use Phlexible\Bundle\GuiBundle\Event\ViewEvent;
 
 /**
- * View frame listener
+ * View frame listener.
  *
  * @author Marcus Stöhr <mstoehr@brainbits.net>
  */
