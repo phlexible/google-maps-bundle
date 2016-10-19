@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the phlexible elastica package.
+ * This file is part of the phlexible google maps package.
  *
  * (c) Stephan Wentz <sw@brainbits.net>
  *
