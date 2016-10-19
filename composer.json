@@ -1,7 +1,7 @@
 {
     "name": "phlexible/google-maps-bundle",
     "description": "phlexible google maps bundle",
-    "license": "proprietary",
+    "license": "MIT",
     "type": "symfony-bundle",
     "keywords": ["googlemaps"],
     "autoload": {
@@ -14,8 +14,8 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "phlexible/gui-bundle": "~1.0",
-        "phpunit/phpunit": "~4.5"
+        "phlexible/gui-bundle": "~1.1",
+        "phpunit/phpunit": "~5.6"
     },
     "extra": {
         "branch-alias": {
