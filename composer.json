@@ -14,12 +14,12 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "phlexible/gui-bundle": "~1.1",
+        "phlexible/gui-bundle": "~1.2",
         "phpunit/phpunit": "~5.6"
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.1-dev"
+            "dev-master": "1.2-dev"
         }
     },
     "minimum-stability": "dev",
