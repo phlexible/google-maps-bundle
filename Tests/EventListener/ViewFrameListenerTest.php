@@ -14,6 +14,7 @@ namespace Phlexible\Bundle\GoogleMapsBundle\Tests\EventListener;
 use Phlexible\Bundle\GoogleMapsBundle\EventListener\ViewFrameListener;
 use Phlexible\Bundle\GuiBundle\Event\ViewEvent;
 use Phlexible\Bundle\GuiBundle\View\IndexView;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -21,8 +22,10 @@ use Symfony\Component\HttpFoundation\Request;
  * View frame listener.
  *
  * @author Stephan Wentz <swentz@brainbits.net>
+ *
+ * @covers \Phlexible\Bundle\GoogleMapsBundle\EventListener\ViewFrameListener
  */
-class ViewFrameListenerTest extends \PHPUnit_Framework_TestCase
+class ViewFrameListenerTest extends TestCase
 {
     public function testOnViewFrameWithoutApiKey()
     {
